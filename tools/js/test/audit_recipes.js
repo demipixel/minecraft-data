@@ -1,31 +1,39 @@
-//counts the number of recipes with a shape, without one and with an outShape
+/* eslint-env mocha */
 
-var versions=require("../../../data/common/versions");
+// counts the number of recipes with a shape, without one and with an outShape
 
-versions.forEach(function(version) {
-  describe("audit recipes "+version,function(){
-    var recipes = require('../../../data/'+version+'/recipes');
-    it("audit recipes",function(){
-      var shapeCount = 0, shapelessCount = 0;
-      var outShapeCount = 0;
-      for(var key in recipes) {
-        var list = recipes[key];
-        for(var i = 0; i < list.length; ++i) {
-          var recipe = list[i];
-          if(recipe.inShape != null) {
-            shapeCount += 1;
-          } else if(recipe.ingredients != null) {
-            shapelessCount += 1;
-          } else {
-            console.log("inShape or ingredients required:", key);
+require('./version_iterator')(function (path, versionString) {
+  let recipes
+  try {
+    recipes = require(path + '/recipes')
+  } catch (e) {
+    console.log('No recipes for version ' + versionString)
+  }
+  if (recipes) {
+    describe('audit recipes ' + versionString, function () {
+      it('audit recipes', function () {
+        let shapeCount = 0
+        let shapelessCount = 0
+        let outShapeCount = 0
+        Object.keys(recipes).forEach(key => {
+          const list = recipes[key]
+          for (let i = 0; i < list.length; ++i) {
+            const recipe = list[i]
+            if (recipe.inShape != null) {
+              shapeCount += 1
+            } else if (recipe.ingredients != null) {
+              shapelessCount += 1
+            } else {
+              console.log('inShape or ingredients required:', key)
+            }
+            if (recipe.outShape) outShapeCount += 1
           }
-          if(recipe.outShape) outShapeCount += 1;
-        }
-      }
+        })
 
-      console.log("normal recipes:", shapeCount);
-      console.log("shapeless recipes:", shapelessCount);
-      console.log("how many have an outShape:", outShapeCount);
+        console.log('normal recipes:', shapeCount)
+        console.log('shapeless recipes:', shapelessCount)
+        console.log('how many have an outShape:', outShapeCount)
+      })
     })
-  });
-});
+  }
+})

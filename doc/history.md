@@ -1,3 +1,127 @@
+## 2.26.0
+* move js tests to standard
+
+## 2.25.0
+* fix packet_title starting from 1.11 (see http://wiki.vg/index.php?title=Protocol&oldid=8543#Title)
+
+## 2.24.0
+* fix brigadier:string parser properties
+
+## 2.23.0
+* some fixes for 17w50a protocol
+
+## 2.22.0
+* mcpc 17w50a support (first supported 1.13 snapshot)
+
+## 2.21.0
+* mcpc 1.12.2 support
+
+## 2.20.0
+* mcpc 1.12.1 support
+
+## 2.19.0
+* add language data
+
+## 2.18.0
+* mcpc 1.12 : add all the data (in addition to protocol)
+
+## 2.17.0
+* mcpc 1.12 support
+
+## 2.16.0
+* supports 1.12-pre4
+
+## 2.15.0
+* supports 17w18b
+
+## 2.14.0
+* supports 17w15a
+
+## 2.13.2
+* correct file names
+
+## 2.13.1
+
+* fix id for custom_payload in 1.11.2
+
+## 2.13.0
+
+* protocol_comments -> protocolComments
+
+## 2.12.0
+
+* add protocol comments
+
+## 2.11.0
+
+* add dataPaths file
+
+## 2.10.0
+
+* complete 1.11 data
+
+## 2.9.0
+
+* mcpc 1.11.2 support
+
+## 2.8.0
+
+* mcpe 1.0 support (except the protocol)
+
+## 2.7.0
+
+* 1.11 support (only the protocol)
+
+## 2.6.0
+
+* add classic blocks (thanks @mhsjlw)
+
+## 2.5.0
+
+* add 16w35a
+* add enchantments data
+
+## 2.4.0
+
+* fix spelling error in protocol.json (catagory)
+* add mcpe 0.15 protocol, blocks and items and update mcpe versions file
+* add mcpc 1.10.1 and 1.10.2 and update mcpc versions file
+
+## 2.3.1
+
+* fix 1.10 version
+
+## 2.3.0
+
+* add 1.10 data
+
+## 2.2.0
+
+ * add license
+ * add pe protocol
+
+## 2.1.0
+
+ * add 1.10-pre1
+
+## 2.0.0
+
+ * fix minecraftVersion in 16w20a
+ * add a regex to validate the version strings
+ * add pe blocks.json and items.json
+ * BREAKING : move all pc data to pc dir
+
+## 1.1.0
+
+ * add 1.10 support (16w20a)
+
+## 1.0.0
+
+ * lot of minecraft version added
+ * improve entities.json
+ * add windows.json
+ * other improvements : see commits log
+
 ## 1.8-0.1.0
  * first version after the versions split
  * move js files to tools/js
